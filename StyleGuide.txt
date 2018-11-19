@@ -1,0 +1,666 @@
+b2p.htmldetails.css
+
+My WIX setup is very sloppy becuase I gave 2 shits about streamlining once you said you'd fix up my HTML.
+
+There will be 5 pages + sitemap.
+
+Home
+Services
+About
+Contact
+
+*NXT-Gen*  This page will be hidden from navbar.  only avalible with direct link.
+	This area will be used as a sub-category of Servics moving forward.
+Site Map
+
+--------
+CSS Stuff
+--------
+
+Color Pallet
+
+Black: 		#000000
+White: 		#FFFFFF
+Orange: 	#DE5021
+Light-Gray	#CCCCCC
+Med-Gray	#313131
+Dark-Grey	#171717
+
+CSS Stuff
+
+TAG		FONT, SIZE, WEIGHT, CHAR SPACE, LINE-HEIGHT, COLOR
+h1		Bank Gothic Medium, 24pt, -.05em, 1.0em, text-shadow:rgba(0,0,0,.3) 0px 5px 0px, #CCCCCC
+	
+h2		DIN Next Light, 25pt, 0em, 1.2em, #FFFFFF
+	
+h3		DIN Next Light, 20pt, 0em, 1.2em, #FFFFFF
+			** NavBar
+h4		Bank Gothic Medium, 48pt, -.05em, 1.0em, text-shadow:rgba(0,0,0,.3) 0px 5px 0px, #FFFFFF
+			**	title tag? <t2>??  Only used in header at this size.
+h5		Rock Salt, 20pt, -0.1em, 1.6em, text-shadow:rgba(0, 0, 0, 0.3) 0px 3px 0px; #FFFFFF
+	
+h6		Rock Salt, 85pt, -0.1em, 1.6em, text-shadow:rgba(0, 0, 0, 0.3) 0px 5px 0px; #DE5021
+			** this could be a title tag? <t1>?? its only used in the header.
+
+	
+p1		DIN Next Light, 15pt, 0em, 1.8em, #FFFFFF	
+	
+p2		DIN Next Light, 20pt, 0em, 1.8em, #CCCCCC
+	
+p3		DIN Next Light, 15pt, 0em, 1.8em, #CCCCCC
+
+	
+------------
+Widget / App Details
+------------
+
+Gallery Settings:
+		** Social Sharing Options is a must!  Heart Icon with counter is bonus but, o well.
+		
+		*** For efficency it would be awesome if the gallery only pre-loaded a few thumbs, then had a button to load more.
+				Brower:	4 boxes per column; pre-load 2 rows.
+				Mobile: 2 boxes per column; pre-load 3 rows.
+
+				Layout: Grid; 
+				Scroll Direction: Vertical; 
+				Title-Position: On-hover, align-right; 
+				Thumbnail-Resize: crop; 
+				image-ratio: 1,1; 
+				fit-to-screen (or page);
+				Spacing/Padding: 15px;
+			
+			Share Icons:
+				color: #DE5021; max-size: 25px, 25px; min-size: 15px, 15px;
+			
+			Actions:
+				<other>		Display Thumbnail
+				<hover>  	Show Text & Social Sharing
+				<on-click>	Open In 'Expand-Viewer'
+				
+				
+			Box Settings:
+				Thumbnail Sizes:
+					Browser Max: 	400px, 400px;
+					Mobile Maxe:	150px, 150px;
+				
+				border: 2px; color: #DE5021, corner-radius: 3px;
+				
+				Text
+				<hover>
+					<title>  		<h5> 
+					<description>	<p1>
+				
+				*Share Icon
+			
+			Expand-Viewer:
+				Full Screen. Or Pop-up in window.  *Whatever the modern thing is.
+				BKG-Color: #707070; BKG-Img; darkTexture-bkg.jpeg, opacity 80%;
+					<title>			<h4> size: 36pt, #CCCCCC
+					<description>	<p1> size: 20pt, #FFFFFF
+				Top Icons:
+					Full-Screen. *not required.  YouTube provides. >> With redirect, meh.
+					Like/Heart Counter. cool but meh.
+					Share. MUST MUST MUST.
+					Close Window.  Obviously.
+			
+			Load Button:
+				align-center; bot-margin: 30px;
+				<h5> Load More </h5>;
+				Size: width: 60px height: 30px  radius: 3px, border: 2px; border-color: #DE5021l; bkg-color: #707070, shadow: 0, 5px, 1px, 60% 
+	
+	
+	
+	
+------------	
+HTML Stuff
+------------
+
+**All animation is on first load only.
+
+<fav> b2p-favicon.jpeg
+
+<header>
+	Span full width.
+	BKG-Color: Gradent, #171717 to #000000
+		** Gradient fads to black before top of navBar to prevent edging, at least 5px prior.
+	**BKG-Img:  darkTexture-bkg.jpeg
+		*It woulc be dope to have this in the bkg instead of the gradient
+
+	Left Group
+		<H6> Matt Leavitt #DE5021
+			^animated
+				Reveal, from-left, duration: 1.7sec, delay: 0, only first time.
+		<H4> multimedia artist
+			^animated
+				Fade-In, duration: 1.2sec, delay: 0.7sec, only first time.
+	Right Group
+		<img>b2p-logo.jpeg, img-shadow:rgba(0, 0, 0, 0.3) 0px, 5px, 0px; 
+			^animated
+				Expand-In, duration: .85sec, delay: 0.9sec, only first time.
+</header>
+
+<nav>
+	BKG-Color: #000000;
+	Shadow: 0 degrees, distance: 1px, size: 0px, Blur: 4, Opacity: 60%;
+		
+	<Inactive>	Top-Border: None
+	<Hover>		Top-Border: #DE5021, opacity: 100%; Font-Color: #DE5021;
+	<Active>	Top-Border: #DE5021, opacity: 100%; Font-Color: #DE5021; Font-Style: Bold;
+		^animate
+			Slide-In, from-left, duration: 1.2sec, delay: 0sec,
+			
+Menus
+	<h3>	HOME
+	<h3>	SERVICES
+		sub-menu (#hidden)
+		<h3> #NXT-GEN MEDIA#
+	<h3>	ABOUT
+	<h3>	CONTACT
+</nav>
+
+
+<pages>
+	All Pages
+	Width: 	980px - Browser 
+			320px - Mobile
+	BKG-Img:	b2p-bkg.jpeg 
+		*Expands behind the grey box.
+	BKG-Color: #313131, opacity: 90%
+	
+**** Talk to me about a shadow on this.   The shadow you currently see is an illusion created in photoshop with the BKG img.  If we can remove this I can repurpose the BKG.
+</pages>
+
+
+<footer>
+	BKG-Color: #171717
+	width: 980px; 
+		**footer = page width.
+		
+	<h1> ABOUT; font-color: #A0A09F;
+	<p3> Blown2Particles is a small freelance company that specializes in producing high-quality, concept through launch video products for businesses who are new to video marketing or working on a smaller budget.  All Services Customizable & Include: Motion Graphics Animation, 3D Logos & Animation, Sales Videos, Promotional Material or Online Marketing for your Business. </p3>
+	
+	<h1> FOLLOW; font-color: #A0A09F;
+
+SocialBar--
+	Indeed 		<a href="https://www.linkedin.com/in/mattleavittvfx/">
+	YouTube		<a href="https://www.youtube.com/blown2particles/">
+	Facebook	<a href="https://www.facebook.com/blown2particles/">
+
+	<h1> GET IN TOUCH; font-color: #A0A09F;	
+	
+	<p3> 9; font: Social-Media-Circled.otf</p3>
+		<p3> Fort Wayne, IN
+	<p3> L; font: Social-Media-Circled.otf</p3>;
+		<p3><a href="tel:1-260-438-4145">260.438.4145</a></p3>
+	<p3> k; font: Social-Media-Circled.otf</p3>;
+		<p3><a href="mailto:matt@blown2paritcles.com" subject"Forward from: 'b2p.com' Message">matt@blown2paritcles.com</a></p3>
+	<p3> (;  font: Social-Media-Circled.otf</p3>;
+		<p3><a href="/pages/contact.html">Contact Us</a></p3>
+	<p3> X;  font: Social-Media-Circled.otf</p3>;
+		<p3><a href="https://join.slack.com/t/blown2particles/shared_invite/enQtNDYzMjQ2MDYyMzczLThiMjhmY2I3ZTlkZGY5ODcwMGEzMmFjZDM5ZGQ1MmY3NjUyMDFlZTIwZWZlNzMzMTkyNDcwMzY0NzdhYmE0MTY">#blown2particles</a></p3>
+		
+	<line> color: #707070, opacity: 100%, line-width: 1px, x-padding: 5px,
+		** I want the line to end 5px from the edges of the frame, so like almost the whole distance but not.
+		
+	<h1> ©2018 Blown2Particles. - All Rights Reserved; font-color: #707070,
+
+</footer>
+
+
+------------
+All Pages
+
+**At top of page**
+	<line> Width: 980px; (or Fit to page width) Weight/Thickness 3px; Color: #DE5021
+	
+	top-margin(or Padding?): 	25px;
+	bot-margin(or Padding?): 	15px;
+	left-margin(or Padding?):	5px;
+	right-margin(or Padding?):	5px;
+
+Home
+
+<strip> columns: 1; bkg-color: #707070; bkg-img: darkTexture-bkg.jpeg; width: = page;
+	<h1> VIDEO & 3D PORTFOLIO; font-size: 36px; font-color: #FFFFFF
+
+<gallery.1>
+	<box1>
+		<Demo>
+		<h5> CURRENT VFX DEMO REEL
+		<p1> Most recent Demo Reel Cut for the VFX Artist, Matt Leavitt.
+		
+		<thumb>		gal.1.1-demo.jpeg
+		<a href="https://www.youtube.com/watch?v=qS-x3cUuHmM">
+	
+	<box2>
+		<Shelby>
+		<h5> 67' SHELBY
+		<p1> Modeled in Autodesk Maya.  4K Render. HDR Rendering done in Mental Ray.
+		
+		<thumb>		gal.1.2-shelby.jpeg
+		<gal.img>	67shelby.jpeg
+
+	<box3>
+		<Signature>
+		<h5> Falling 3D Signature
+		<p1> Maxon Cinema 4D. Animated falling bomb icons using Particle Dynamics.  Baked a projection map of my signature to final shot. 
+		
+		<thumb>		gal.1.3-sig.jpeg
+		<a href="https://www.youtube.com/watch?v=1mvQPl2l0Cs">
+
+	<box4>
+		<HoloTable>
+		<h5> HOLOGRAPHIC TABLETOP
+		<p1> Video Compositing / Motion Graphics. Adobe After Effects. Iron Man inspired computer UI for a futuristic OS Concept. A variety of Procedural Animation techniques were used in the details.
+		
+		<thumb>		gal.1.4-holotable.jpeg
+		<a href="https://www.youtube.com/watch?v=1U3QllQIWEk&t=49s">
+		
+	<box5>
+		<Drakelees>
+		<h5> DRAKELEE'S HOUSE
+		<p1> 3D Modeling in Autodesk Maya.  RenderMan for Maya was used to create the occulsion pass render.
+		
+		<thumb>		gal.1.5-drakelees.jpeg
+		<gal.img>	drakeleesHouse.jpeg
+
+	<box6>
+		<Logo Burn>
+		<h5> LOGO DISINTEGRATION
+		<p1> Logo Designed in Adobe Photoshop & Illustrator.  Particle & Smoke Effects rendered in SideFX Houdini.  Final Composite and Fire Effects Adobe After Effects.
+		
+		<thumb>		gal.1.6-logoburn.jpeg
+		<a href="https://www.youtube.com/watch?v=2Tu81ttXAMo">
+		
+	<box7>
+		<Fire City>
+		<h5> Written by a Kid - Ep. 04 - Fire City
+		<p1> VFX Credit. 4 Shots. Rotoscoping, Masking, Green Screen keying, Compositing, 3D Tracking in Nuke/NukeX. Planet Explosion in Cinema 4D.
+		
+		<thumb>		gal.1.7-firecity.jpeg
+		<a href="https://www.youtube.com/watch?v=0xDKjfjObhs">
+	
+	<box8>
+		<Banner>
+		<h5> MAYA nCLOTH FURLING BANNERS
+		<p1>  All modeling, nCloth & anitmation in Autodesk Maya.  Tower's Procedural Animation inspired by HBO's Game of Thrones.
+		
+		<thumb>		gal.1.8-banner.jpeg
+		<a href="https://www.youtube.com/watch?v=vDXsTVC_ciQ">
+
+	<box9>
+		<grass>
+		<h5> RENDERMAN GRASS SHADER
+		<p1> Modeling & Lighting in Maya.  Rendering & Shader in Pixar's RenderMan.
+		
+		<thumb>		gal.1.9-grass.jpeg
+		<a href="https://www.youtube.com/watch?v=3VWGsu2BEjg">
+
+	<box10>
+		<pong>
+		<h5> RENDERMAN PONG
+		<p1> 3D Modeling in Autodesk Maya. Animated shader for pong screen for RenderMan.  Final Composite with old TV effect Apple Shake.
+		
+		<thumb>		gal.1.10-pong.jpeg
+		<a href="https://www.youtube.com/watch?v=-z46NCqfez4">
+		
+	<box11>
+		<stoplight>
+		<h5> YIELD PLEASE!
+		<p1> Autodesk Maya. 3D Modeling. Procedural Animation using Expresion Scripting. Inspired by Pixars Cars, Radiator Springs.
+		
+		<thumb>		gal.1.11-stoplight.jpeg
+		<a href="https://www.youtube.com/watch?v=EQHYtqL-udI">
+
+	<box12>
+		<plant>
+		<h5> HOUDINI L-SYSTEM PROCEDURAL PLANT
+		<p1> Procedural Modeling & Animation of a plant in SideFX Houdini.  L-system coding created both the model and growth animation.
+		
+		<thumb>		gal.1.12-plant.jpeg
+		<a href="https://www.youtube.com/watch?v=tSA1UN70-NY">
+			
+	<box13>
+		<chinamen>
+		<h5> PARTICLE GOALING - CROWD SIMULATION
+		<p1> Particle Goaling across an uneven surface to simulate crowd simulation in Autodesk Maya.  Simple Character shape was assigned to particles.  4-Positioin walk cycle on the particles as they "walk".
+		
+		<thumb>		gal.1.13-littlemen.jpeg
+		<a href="https://www.youtube.com/watch?v=kY-02ZK9JwE">
+	</gal>
+		
+<strip> columns: 1; bkg-color: #707070; bkg-img: darkTexture-bkg.jpeg; width: = page;
+	<h1> DIGITAL, TRADITIONAL & MORE; font-size: 36px; font-color: #FFFFFF		
+		
+		
+<gallery.2>
+	<box1>
+		<zombie>
+		<h5> SELF-PORTRAIT (AS A ZOMBIE!)
+		<p1> Adobe Photoshop. Digital Illustration. 27" x 40".
+		
+		<thumb>		gal.2.1-zombie-small.jpeg
+		<gal.img>	zombie-full.jpeg
+	
+	<box2>
+		<eye>
+		<h5> DRAGON'S EYE
+		<p1> Pen & Ink Stippling Illustration. 4" x 4".
+		
+		<thumb>		gal.2.2-eye-small.jpeg
+		<gal.img>	eye-full.jpeg
+	
+	<box3>
+		<seasons>
+		<h5> SEASON CHANGE IN SAVANNAH
+		<p1> Adobe Photoshop.  Changed from Summer to Winter.
+		
+		<thumb>		gal.2.3-seasons-small.jpeg
+		<gal.img>	seasons-full.jpeg
+	
+	<box4>
+		<newsletter>
+		<h5> E-MAIL NEWSLETTER - GRN FORT WAYNE
+		<p1> Layout Designed in Adobe Photoshop & InDesign. Rebuilt in HTML structureed gride for e-mail marketing campaign.
+		
+		<thumb>		gal.2.4-newsletter-small.jpeg
+		<gal.img>	newsletter-full.jpeg
+
+	<box5>
+		<brucie>
+		<h5> BRUCE WILLIS - LAST MAN STANDING
+		<p1> Airbrush with Acrylic Paint. 18" x 24". Cold Press Illustration Board. (Poor Bruce's eye took water damage in storage.)
+		
+		<thumb>		gal.2.5-heresbrucie-small.jpeg
+		<gal.img>	heresbrucie-full.jpeg
+
+	<box6>
+		<matte>
+		<h5> MATTE PAINTING. SAVANNAH BAY.
+		<p1> Took a photo of the Savannah Bay area and evolved the scene to look like a more metropolitan area.
+		
+		<thumb>		gal.2.6-setextend-small.jpeg
+		<gal.img>	setextend-full.jpeg
+	
+	<box7>
+		<imagine>
+		<h5> IMAGINE
+		<p1> Marker on Cold Press Illustration Board. 18" x 12".
+		
+		<thumb>		gal.2.7-imagine-small.jpeg
+		<gal.img>	imagine-full.jpeg.jpeg
+	
+	<box8>
+		<mda>
+		<h5> ANGLES FOR MDA - ATLANTA
+		<p1> Designed Promotional Materials for Angles for MDA Hair Show - Atlanta. Posters, Flyers & Tickets.
+		
+		<thumb>		gal.2.8-mda-small.jpeg
+		<gal.img>	mda-full.jpeg
+	
+	<box9>
+		<ironchef>
+		<h5> IRON CHEF
+		<p1> Mixed Media Illustration: Pen & Ink, Chalk Pastels & Colored Pencil. 18" x 24".
+		
+		<thumb>		gal.2.9-ironchef-small.jpeg
+		<gal.img>	ironchef-full.jpeg
+
+	<box10>
+		<rpm>
+		<h5> RPM VENDING
+		<p1> Designed Logo, T-shirts, Business Card & Other Promotional Material.
+		
+		<thumb>		gal.2.10-rpmvending-small.jpeg
+		<gal.img>	rpmvending-full.jpeg
+		
+	<box11>
+		<headphones>
+		<h5> HEADPHONES
+		<p1> Charcoal & Graphite Drawing. 20" x 34".
+		
+		<thumb>		gal.2.11-headphones-small.jpeg
+		<gal.img>	headphones-full.jpeg
+	
+	<box12>
+		<superhero>
+		<h5> WHO WANTS TO BE A SUPERHERO?
+		<p1> TV Show Pitch.  Designed character Biographs, Billboard, Short Commercial Spot & other Promotional Material.  Adobe Photoshop, Illustrator & Quark.
+		
+		<thumb>		gal.2.12-superhero-small.jpeg
+		<gal.img>	superhero-full.jpeg
+	
+	<box13>
+		<hand>
+		<h5> CROSS-HATCHED HAND
+		<p1>Pen & Ink Illustration. 6" x 6".
+		
+		<thumb>		gal.2.13-hand-small.jpeg
+		<gal.img>	hand-full.jpeg
+	
+	<box14>
+		<football>
+		<h5> METRO FOOTBALL PLAYER CARDS
+		<p1> Designed Trading Cards, Printable Collegages & Team Themed"Highlight" Photos for Printed material for parents for 2 teams.
+		
+		<thumb>		gal.2.14-football-small.jpeg
+		<gal.img>	football-full.jpeg
+
+	<box15>
+		<teemo>
+		<h5> PUMPKIN CARVING - TEEMO
+		<p1> Inspired by Riot Games, League of Legends character Teemo. Honorable Mention for the Riot Games Pumpkin Carving Contest.
+		
+		<thumb>		gal.2.15-pumpkin-small.jpeg
+		<gal.img>	pumpkin-full.jpeg		
+	</gal>
+/Home
+
+
+Services
+
+<strip.1> columns: 2; bkg-color: #707070; bkg-img: darkTexture-bkg.jpeg; width: = page; spacing: 0; padding: 0;
+				ratio: 2-1; col.1=67%; col.2=33%
+	<col.1>
+	<p1> Blown2Particles is a small freelance business that specializes in producing high-quality, concept through launch video products for businesses who are new to video marketing or working on a smaller budget.  All Services Customizable & Include: Motion Graphics Animation, 3D Logos & Animation, or Promotional Material for your Business or Sales Videos for a Product.; 
+		font-size: 16px;
+	<col.2>
+		<img> gal.1.1-demo.jpeg
+</strip.1>
+
+<h3> Our mission is to provide your business with the digital tools for success not only for today, but tomorrow & beyond.
+	font-size: 32px; align-center; text-align: center;
+	
+<h3> Servics
+	align-left; font-color: #CCCCCC;
+	
+<Repeater.Services>
+	spacing(or padding?): 5px; align: justify;
+	<Box.1> color: #DE5021
+		<h2> Video Compositing/Editing
+		<p1> Able to Edit any draft level of shot in Final Cut or Premiere. Green Screen, Rotoscopting, Color Correction/Grading, Set Extensions & More.
+		
+	<Box.2> color: #171717
+		<h2> 3D Modeling & Animation
+		<p1> Maya & Cinema 4D ready.  Able to box model any structural or organic object.  Able to convert blueprints to 3D.  Many forms of keyframe and procedural animation.  Animated company logos, background animations, or 3D video overlays can help you stand out!  No character animations.
+
+	<Box.3> color: #DE5021
+		<h2> Motion Graphics
+		<p1> Adobe After Effects, Nuke & Cinema 4D. Bring particles & other cutting edge effects  to your videos to give them a professional & modern presenation.
+		
+	<Box.4> color: #171717
+		<h2> Design
+		<p1> Adobe Photoshop, Illustrator, InDesign.  Any promotional or marketing material for any print or digital media is available.  Your business cards, event promotions, social media material & much more.
+		
+	<Box.5> color: #DE5021
+		<h2> Online Advertising
+		<p1> Marketing online is extremely powerful!  Certified in 2018 in Google Ads & Video Ads. Not only can your ads be created here, they can also be launched into action!
+		
+	<Box.6> color: #171717
+		<h2> Wanna Learn More?
+		<p1> Contact today and I'll gladly discuss how any of these services or my help could grow your business.  Pricing will vary based on service.
+		
+	<Box.7> color: #DE5021
+		<h2> Web Optimization
+		<p1> Get your website in top shape without having a full blown remodel.  Able to streamline and reorganize under the hood to make sure your audience isn't passing you by.
+		
+	<Box.8> color: #171717
+		<h2> Business Video Communication
+		<p1> Want to incorporate video into your daily workflow or interact with your customers online?  Allow me to assist getting you the correct tools & training allowing you to hit the ground running.
+</repeater.services>
+
+<strip.2>
+	columns: 3; bkg-color: #707070; bkg-img: darkTexture-bkg.jpeg; width: = page; spacing: 0; padding: 0;
+				ratio: 2-1; col.1=67%; col.2=33%
+	
+	<col.1>
+		<img> nxtgen-left.jpeg
+		bkg-color: #D647B7
+	<col.2>
+		<h1> INTRODUCING; font-color: #000000;
+		<h6> NXT-GEN; font-color: #1CE230 font: Neon Pixel 7
+		<h6> MEDIA; font-color: #D647B7; font-size: 36px;
+		
+		<h3> WHAT IS YOUR BUSINESS' PLACE ON THE INTERNET?
+			font-size: 20px; font-color: #171717;
+		<p1> In 2018, its nearly impossible to have any business without some form of an online footprint.  With new resources available everyday that traffic is rapidly increasing.  Making the transition to incorporate online advertising can be overwhelming.
+​
+			 There are many services out there that can help get you started, but often the attention to detail to have your site up to standard is overlooked by the rush towards social media.
+​
+			 NXT-GEN Media specializes in creating the tools for your business to thrive online.  We are able to utilize the website and content you already have and convert it into an online marketing powerhouse.  Building from the ground up is also an option.
+​
+			 NXT-GEN Media has also partnered with some of the top talent in the area both established and rising talent to insure that your final product is exactly what you expect.	
+		
+		<button>
+			color: #171717; radius: 3px; Shadow: 0 degrees, distance: 1px, size: 0px, Blur: 4, Opacity: 60%;
+			<h5><a href="//contact.html/"> Contact to Learn More; font-size: 16px; font-color: #FFFFFF
+	<col.3>
+		<img> nxtgen-right.jpeg
+		bkg-color: #D647B7
+</strip.2>
+
+/Services
+
+About
+	<img> matt-profile.jpeg; shape: circle, border: 1px; border-color: #DE5021; shadow: 0 degrees, distance: 1px, size: 0px, Blur: 4, Opacity: 60%;
+	<h3> Check out <u><a href="/service.html>Services</a></u> to see how I can help your business today!
+		font-color: #CCCCCC;
+
+	<p1> Matt Leavitt is a passionate Multimedia Artist with demonstrated abilities working with 3D Modeling, Motion Graphics & Online video since 2009.  My journey as an artist began at a young age with a mission to create video games and animation.
+​		 I spent 5 years studying at Indiana-Purdue University Fort Wayne (IPFW) where I studied Computer Art & Marketing.  During my stay there I also had the honor of being apart of the JASMAR Animation Group.   In 2006, I transferred to Savannah College of Art & Design (SCAD) to complete my BFA in Visual Effects in 2009.
+​		 Since graduations I've worked at Indiana's News Center, YouTube projects including Geek & Sundry's Written by a Kid, episode 4, 'Fire City' staring Battlestar Galactica's Aaron Douglas, directed by Jon Simms.
+​		 My other endeavors involve online marketing, branding & business development.
+
+	<p1> I currently reside in Fort Wayne, Indiana providing services focused on the local community.  My personal activities are focused on spending time with my loving girlfriend and our beautiful little girl. 
+		 Having her growing amazement towards the world filling her already vivid imagination has reignited a creative light that being an adult can wash away.
+		 Some of our creative past-times include: Home-made coloring books, sidewalk characters, pancake art & anything else she gets us into.
+
+	<img> family-photo.jpeg; shape: circle, border: 1px; border-color: #DE5021; shadow: 0 degrees, distance: 1px, size: 0px, Blur: 4, Opacity: 60%;
+
+/About
+
+
+Contact
+
+	<h3> Getting in touch is just a click away!
+		font-size: 40px; align-left; text-align: left; font-color: #CCCCCC	
+	<p1> On this page you will find a variety of ways to contact for Matt Leavitt with Blown2Particles & NXT-Gen Media Fort Wayne.
+​		 Please don't hesitate to reach out, my goal is to be easy to reach to be able to see if my services can help your business.
+​		 Unsure about video or advertising on the internet?  Please feel free to send me your questions and I will personally answer them until you are feeling confident about how & why it can assist the growth of any business.
+
+*Calendly Widget (pop-up)*
+	<!-- Calendly badge widget begin -->
+	<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+	<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+	<script type="text/javascript">Calendly.initBadgeWidget({url: 'https://calendly.com/blown2particles/30min', text: 'Schedule a Time', color: '#4d5055', branding: true});</script>
+	<!-- Calendly badge widget end -->
+
+	
+*** I like this style the best, but I'll have to remix a little bit to make it work.  If you have ideas I'm open.
+	
+
+*Calendly Widget (in-line)*
+	<!-- Calendly inline widget begin -->
+	<div class="calendly-inline-widget" data-url="https://calendly.com/blown2particles/30min" style="min-width:320px;height:580px;"></div>
+	<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+	<!-- Calendly inline widget end -->
+	
+**If, inline, then use the next line**
+	<h3> Want to schedule a call or appointment? Scroll to pick a time & my digital assistant will gladly add you to my calendar.
+		font-size: 24px; text-align: left; font-color: #CCCCCC	
+
+<googleMaps.Widget>
+	address: 305 Airport North Park, Fort Wayne, IN 46825
+
+	<h3> Office hours are by APPOINTMENT ONLY.
+		font-size: 24px; text-align: left; font-color: #CCCCCC
+
+<contact.card>
+	<h3> Contact; font-color: #CCCCCC
+
+	<p2> L; font: Social-Media-Circled.otf</p2>;
+	<p2> Phone
+		<p2><a href="tel:1-260-438-4145">260.438.4145</a></p2>
+	
+	<p2> 1; font: Social-Media-Circled.otf</p2>;
+	<p2> Fax
+		<p2><a href="fax:260.637.4415">260.637.4415</a></p2>
+	
+	<p2> k; font: Social-Media-Circled.otf</p2>;
+	<p2> E-mail
+		<p2><a href="mailto:matt@blown2paritcles.com" subject"From B2P.com - Insert Title' Message">matt@blown2paritcles.com</a></p2>
+	
+	<h3> Or you can find me online; font-color: #CCCCCC
+	
+	<p2> C;  font: Social-Media-Circled.otf</p2>;
+	<p2> LinkedIn Profile
+		<p2><a href="https://www.linkedin.com/in/mattleavittvfx/"></p2>
+	
+	<p2> M;  font: Social-Media-Circled.otf</p2>;
+	<p2> YouTube Channel
+		<a href="https://www.youtube.com/user/blown2particles"></a>
+	
+	<p2> E;  font: Social-Media-Circled.otf</p2>;
+	<p2> Facebook Page
+		<a href="https://www.facebook.com/blown2particles/">Contact Us</a>
+		
+	<p2> X;  font: Social-Media-Circled.otf</p2>;
+	<p2> Slack
+		<a href="https://join.slack.com/t/blown2particles/shared_invite/enQtNDYzMjQ2MDYyMzczLThiMjhmY2I3ZTlkZGY5ODcwMGEzMmFjZDM5ZGQ1MmY3NjUyMDFlZTIwZWZlNzMzMTkyNDcwMzY0NzdhYmE0MTY">#slack</a>
+	
+	<p2> 3;  font: Social-Media-Circled.otf</p2>;
+	<p2> Dropbox
+		<a href="https://www.dropbox.com/s/pgi7nuyigngrsnz/b2p.wallpaper.jpg?dl=0">#slack</a>
+	
+	<button>
+		bkg-color; #171717; radius: 3px; shadow: 0 degrees, distance: 1px, size: 0px, Blur: 4, Opacity: 60%;
+	<p2> (;  font: Social-Media-Circled.otf</p2>;	
+	<h5> GRAB A COPY OF MY RESUME; font-size: 24px;
+	<a href="/docs/mattleavitt-onlineresume.pdf">
+	
+</contact.card>
+
+<button>		
+
+<h3> Questions, Comments, Requests? Let me know!
+	font-size: 40px; text-align: left; font-color: #CCCCCC
+
+<contact.form>
+ inputbox; border: 1px; border-color: #DE5021; bkg-color: #171717;
+	<input.1> required: 1; <p1> Name; userInput: <p1>; font-color: #CCCCCC;
+	<input.1> required: 1; <p1> E-mail; userInput: <p1>; font-color: #CCCCCC;
+	<input.1> required: 1; <p1> Phone; userInput: <p1>; font-color: #CCCCCC;
+	<input.1> required: 0; <p1> Message; userInput: <p1>; font-color: #CCCCCC;
+	<submit.button> <h5> Message Today!; font-size: 24px;
+		radius: 5px; color: #DE5021; shadow: 0 degrees, distance: 1px, size: 0px, Blur: 4, Opacity: 60%;
+		<a href="mailto:matt@blown2particles.com subject="DirectMessage-b2p.com ContactForm">
+</contact.form>	
+/Contact
+
+
+
+NXT-GEN
+
+-Meh. Getting There.
+
+/NXT-GEN
