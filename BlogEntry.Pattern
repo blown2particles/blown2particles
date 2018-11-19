@@ -1,0 +1,24 @@
+<header>
+ <h2 id="article_title">
+   ARTICLE HEADLINE
+ </h2>
+ <p>
+   First 50 characters of the story
+ </p>
+ <ul aria-labelledby="article_title">
+   <li>
+     <span>
+       Published:
+     </span>
+     <time datetime="YYYY-MM-DD">
+       Month Day, Year
+     </time>
+   </li>
+   <li>
+     <span>
+      Author:
+     </span>
+		<a href="author's professional link">Author's Name</a>
+   </li>
+ </ul>
+</header>
